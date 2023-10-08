@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="court-designer">
     <CourtBuilderBase />
 
     <template v-if="selectedSport === 'Tennis'">
@@ -41,10 +41,10 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import CourtBuilderBase from '@/components/layout/CourtBuilderBase.vue';
-import TennisPlayingArea from '@/components/layout/tennis/TennisPlayingArea.vue';
-import TennisBoundryLines from '@/components/layout/tennis/TennisBoundryLines.vue';
-import TennisNet from '@/components/layout/tennis/TennisNet.vue';
+import CourtBuilderBase from './CourtBuilderBase.vue';
+import TennisPlayingArea from './TennisPlayingArea.vue';
+import TennisBoundryLines from './TennisBoundryLines.vue';
+import TennisNet from './TennisNet.vue';
 
 export default defineComponent({
   name: "CourtDesigner",
@@ -55,11 +55,11 @@ export default defineComponent({
     TennisNet,
   },
   setup() {
-    const selectedSport = ref('Tennis');  // default to Tennis for now
+    const selectedSport = ref('Tennis');
     const overlayBasketball = ref(false);
     const overlayTennis = ref(false);
 
-    const tennisPlayingAreaColor = ref('#FFFFFF');  // default colors
+    const tennisPlayingAreaColor = ref('#FFFFFF');
     const tennisBoundaryLineColor = ref('#FFFFFF');
 
     const colorOptions = [
@@ -119,7 +119,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-  .about {
+  .court-designer {
     position: relative;
   }
 </style>
